@@ -15,8 +15,8 @@ package java09;
 */
 
 class Car {
-    static int modelOutput; // 클래스 변수.
-    String modelName; // 인스턴스 변수.
+    static int modelOutput = 10; // 클래스 변수.
+    String modelName = "20"; // 인스턴스 변수.
 
     void method() {
         int var = 10; // 지역 변수.
@@ -25,4 +25,29 @@ class Car {
 }
 
 public class Field {
+
+    public static void main(String[] args) {
+
+        int var = 30; // 지역 변수.
+        System.out.println("지역변수: " + var + "\n");
+
+        Car myField1 = new Car(); // 인스턴스 생성.
+        Car myField2 = new Car(); // 인스턴스 생성.
+
+        System.out.println(Car.modelOutput);    // 클래스 변수 참조.
+        System.out.println(myField1.modelOutput);
+        System.out.println(myField2.modelOutput);
+
+        myField1.modelOutput = 100; // 클래스 변수의 값을 변경할 수 있다.
+
+        System.out.println(myField1.modelName); // 인스턴스 변수 참조.
+        System.out.println(myField2.modelName);
+
+        myField1.modelName = "200"; // 인스턴스 변수의 값을 변경할 수 있다.
+
+        System.out.println(myField1.modelName);
+        System.out.println(myField2.modelName);
+
+
+    }
 }
